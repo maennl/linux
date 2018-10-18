@@ -17,6 +17,15 @@ add_custom_command(
         VERBATIM  USES_TERMINAL
 )
 
+add_custom_command(
+        OUTPUT MODULES
+        COMMAND make ARGS modules ARCH=${ARCH_TARGET} CROSS_COMPILE=${COMPILER}
+        WORKING_DIRECTORY ${CMAKE_CURRENT_LIST_DIR}
+        VERBATIM  USES_TERMINAL
+)
+
+
 ADD_CUSTOM_TARGET(Image ALL DEPENDS IMAGE)
+ADD_CUSTOM_TARGET(Modules ALL DEPENDS MODULES)
 
 include_directories(${KERNEL_SOURCES}/include)
