@@ -12,8 +12,11 @@ Set(image_cmd make Image dtbs ARCH=${ARCH_TARGET} CROSS_COMPILE=${COMPILER} )
 
 add_custom_command(
         OUTPUT IMAGE
-        COMMAND ${image_cmd}
-        WORKDIR ${CMAKE_CURRENT_LIST_DIR}
+        COMMAND make ARGS Image dtbs ARCH=${ARCH_TARGET} CROSS_COMPILE=${COMPILER}
+        WORKING_DIRECTORY ${CMAKE_CURRENT_LIST_DIR}
+        VERBATIM  USES_TERMINAL
 )
 
 ADD_CUSTOM_TARGET(Image ALL DEPENDS IMAGE)
+
+include_directories(${KERNEL_SOURCES}/include)

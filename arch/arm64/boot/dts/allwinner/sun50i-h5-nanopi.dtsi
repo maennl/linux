@@ -65,7 +65,6 @@
         ethernet0 = &emac;
         i2s0 = &i2s0;
         pcm5102a = &pcm5102a;
-        spidev0 = &spidev0;
         spiflash = &spiflash;
         pitft = &pitft;
         pitft_ts = &pitft_ts;
@@ -294,7 +293,7 @@
     spidev0: spi@0 {
         compatible = "nanopi,spidev";
         reg = <0>;
-        status = "okay";
+        status = "disabled";
 
         spi-max-frequency = <10000000>;
     };
