@@ -84,14 +84,6 @@
 		rfkill-name = "sunxi-bt";
 		rfkill-type = "bluetooth";
 	};
-
-	user_io@0 {
-        compatible = "maennl-lora,generic-uio,ui_pdrv";
-        status = "okay";
-        interrupt-parent = <&pio>;
-        interrupts = <17 IRQ_TYPE_EDGE_RISING>;
-    };
-
 };
 
 &cpu0 {
